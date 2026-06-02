@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: monospace, space;
     background: #000b19;
-    color: rgb(10, 31, 255);
+    color: rgb(255, 255, 255);
     line-height: 1.6;
 }
 
@@ -42,7 +42,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
 }
@@ -82,7 +82,7 @@ h1 {
 
 header p {
     font-size: 1.5rem;
-    color: rgb(10, 31, 255);
+    color: rgb(237, 237, 241);
 }
 
 button {
@@ -115,4 +115,55 @@ button:hover {
     background: white;
     transform: scale(1.05);
     transition: 0.3s;
+}
+
+header,
+section {
+    animation: pageSlideIn 0.4s ease;
+}
+
+@keyframes pageSlideIn {
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 50px;
+}
+
+.athletic-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 50px;
+}
+
+.testimonials-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 50px;
+}
+
+.home-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 50px;
+}
+
+.merch-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 50px;
+}
+
+.contact-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0px 50px;
 }
