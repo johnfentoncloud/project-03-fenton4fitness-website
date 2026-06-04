@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: monospace, space;
+    font-family: 'Oxanium', sans-serif;
+    font-style: italic;
     background: #000b19;
-    color: rgb(255, 255, 255);
-    line-height: 1.6;
+    color: hsl(201, 99%, 50%);
+    line-height: 2;
 }
 
 body::before {
@@ -18,7 +24,7 @@ body::before {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1200px;
-    opacity: 0.20;
+    opacity: 0.15;
     z-index: -1;
 }
 
@@ -26,7 +32,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10%;
+    padding: 1.5px 10%;
     background: rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
@@ -42,9 +48,17 @@ nav ul {
 }
 
 nav a {
-    color: rgb(255, 255, 255);
+    display: inline-block;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: hsl(201, 99%, 50%);
+    transform: translateY(-5px);
 }
 
 .logo img {
@@ -75,7 +89,7 @@ header button {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 0;
     letter-spacing: 2px;
 }
@@ -90,20 +104,29 @@ button {
     padding: 14px 28px;
     border: none;
     border-radius: 999px;
-    background: #38bdf8;
+    background: hsl(201, 99%, 50%);
     color: #07111f;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
 }
 
 section {
     padding: 60px 10%;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 0px solid rgba(255, 255, 255, 0.1);
 }
 
 h2 {
-    color: #38bdf8;
+    color: hsl(201, 99%, 50%);
     font-size: 2rem;
 }
 
@@ -113,7 +136,7 @@ li {
 
 button:hover {
     background: white;
-    transform: scale(1.05);
+    transform: scale(1.1);
     transition: 0.3s;
 }
 
@@ -135,35 +158,64 @@ section {
 .about-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0px 50px;
+    padding: 50px 50px;
+    padding-top: 50PX;
 }
 
 .athletic-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0px 50px;
+    padding: 50px 50px;
+    padding-top: 50PX;
 }
 
 .testimonials-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0px 50px;
+    padding: 50px 50px;
+    padding-top: 50PX;
 }
 
 .home-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0px 50px;
+    padding: 50px 50px;
+    padding-top: 50PX;
 }
 
 .merch-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0px 50px;
+    padding: 50px 50px;
+    padding-top: 50PX;
 }
 
 .contact-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0px 50px;
+    padding: 50px 50px;
+    padding-top: 50PX;
+}
+
+.athletic-list {
+    color: white;
+    list-style: none;
+    padding: 0px 60px;
+}
+
+.athletic-list li {
+    margin-bottom: 30px;
+    line-height: 2;
+}
+
+.athletic-list strong {
+    color: hsl(201, 99%, 50%);
+    font-size: 2rem;
+}
+
+h1,
+h2,
+nav a {
+    font-family: 'Orbitron', sans-serif;
+    font-style: italic;
 }
