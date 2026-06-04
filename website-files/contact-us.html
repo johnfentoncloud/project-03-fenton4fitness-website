@@ -28,40 +28,72 @@
 
     <header>
         <section class="contact-content">
-        
-        <h1>CONTACT US</h1>
+
+            <h1>CONTACT US</h1>
 
             <p class="hero-subtitle">
                 Ready to start training?
             </p>
 
-            <p>
-                Interested in athlete development, personal training, small group training, or future F4F programs?
-            </p>
+            <h2>Athlete Interest Form</h2>
 
             <p>
-                Contact options and a training interest form will be added soon.
+                Tell us a little about yourself and your goals.
+                We'll reach out to discuss training options.
             </p>
 
-            <p>
-                For now, this page will become the home base for future lead collection.
-            </p>
+            <form>
 
-            <button>Get Started</button>
-            
+                <label for="athlete-name">Athlete Name</label>
+                <input type="text" id="athlete-name" name="athlete-name" required>
+
+                <label for="athlete-age">Athlete Age</label>
+                <input type="number" id="athlete-age" name="athlete-age" required>
+
+                <label for="primary-sport">Primary Sport</label>
+                <input type="text" id="primary-sport" name="primary-sport" required>
+
+                <label for="parent-name">Parent Name</label>
+                <input type="text" id="parent-name" name="parent-name" required>
+
+                <label for="parent-email">Parent Email</label>
+                <input type="email" id="parent-email" name="parent-email" required>
+
+                <label for="parent-phone">Parent Phone</label>
+                <input type="tel" id="parent-phone" name="parent-phone" required>
+
+                <label for="athlete-goals">Athlete Goals</label>
+
+                <textarea id="athlete-goals" name="athlete-goals" rows="5" placeholder="Tell us about your goals..."
+                    required></textarea>
+
+                <label for="other-interests">Other Interests or Hobbies</label>
+
+                <input type="text" id="other-interests" name="other-interests">
+                <p class="form-note">
+                    Sports are great, but what else do you enjoy?
+                </p>
+
+                <button type="submit">Get Started</button>
+            </form>
+
         </section>
+
     </header>
 
     <section>
+
         <h2>About Us</h2>
 
         <p>
             Fenton4Fitness is built around hard work, confidence,
             athletic development, and building a strong community.
         </p>
+
     </section>
 
     <section>
+
         <h2>Training Services</h2>
 
         <ul>
@@ -71,14 +103,17 @@
             <li>Bootcamps</li>
             <li>Personal Training</li>
         </ul>
+
     </section>
 
     <section>
+
         <h2>Train With Purpose</h2>
 
         <p>
             Stay calm. Stack wins. Keep going.
         </p>
+
     </section>
 
     <script src="script.js"></script>
