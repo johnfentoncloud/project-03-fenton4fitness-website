@@ -42,7 +42,7 @@
                 We'll reach out to discuss training options.
             </p>
 
-            <form>
+            <form id="lead-form">
 
                 <label for="athlete-name">Athlete Name</label>
                 <input type="text" id="athlete-name" name="athlete-name" required>
@@ -62,19 +62,32 @@
                 <label for="parent-phone">Parent Phone</label>
                 <input type="tel" id="parent-phone" name="parent-phone" required>
 
+
+
                 <label for="athlete-goals">Athlete Goals</label>
 
                 <textarea id="athlete-goals" name="athlete-goals" rows="5" placeholder="Tell us about your goals..."
                     required></textarea>
 
-                <label for="other-interests">Other Interests or Hobbies</label>
+                <label for="injury-history">Injury History</label>
 
-                <input type="text" id="other-interests" name="other-interests">
+                <textarea id="injury-history" name="injury-history" rows="5"
+                    placeholder="Tell us about your Injuries..." required></textarea>
+
+                <label for="training-history">Training History</label>
+
+                <textarea id="training-history" name="training-history" rows="5"
+                    placeholder="Tell us about your Training..." required></textarea>
+
                 <p class="form-note">
                     Sports are great, but what else do you enjoy?
                 </p>
 
-                <button type="submit">Get Started</button>
+                <label for="other-interests">Other Interests or Hobbies</label>
+
+                <input type="text" id="other-interests" name="other-interests">
+
+                <button type="submit">Submit Athlete Interest Form</button>
             </form>
 
         </section>
