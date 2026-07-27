@@ -8,8 +8,28 @@ Thumbs.db
 # Logs
 *.log
 
-# Environment variables
+# Environment variables and local configuration
 .env
+.env.*
+!.env.example
+*.local.json
+*.tmp.json
 
 # Node modules
 node_modules/
+
+# Generated caches and infrastructure artifacts
+__pycache__/
+*.py[cod]
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+.local-backups/
+
+# Local review evidence and source media
+40-cloudwatch-successful-invocation.png
+screenshots/dynamodb/34-aws-lead-pipeline-pushed-clean-status.png
+assets/images/coaches/*.jpg
+AUDIT.md
+FORM-INTEGRATION.md
