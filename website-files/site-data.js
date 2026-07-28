@@ -18,3 +18,22 @@ window.F4F_WEBSITE_PACKAGES = [
   { title:"Custom Website and Lead System", price:"Starting at $2,500", description:"For businesses that need custom forms, automation, cloud services, or advanced workflows.", features:["Custom website structure","Multiple lead types","Automated email responses","Cloud-based lead storage","Customer-information organization","Custom workflows and AWS services where appropriate","Documentation and deployment support"] },
   { title:"Website Care", price:"Starting at $75 per month", description:"Optional, scoped support for an existing website. This is not an unlimited-work plan.", features:["Basic content updates","Small text or image changes","General maintenance","Form checks","Minor troubleshooting","Basic performance monitoring"] }
 ];
+
+/* F4F Apparel prelaunch content. Leave unverified commerce fields blank until the provider listing is approved. */
+window.F4F_APPAREL = {
+  productName: "F4F Performance Training Tee",
+  color: "Black",
+  productStatus: "First sample in production",
+  description: "Built for coaching. Built for lifting. Built for everyday training.",
+  frontImage: "images/apparel/f4f-performance-tee-front.webp",
+  frontImageAlt: "Front of the black F4F Performance Training Tee with a small circular Fenton4Fitness logo on the left chest.",
+  backImage: "images/apparel/f4f-performance-tee-back.webp",
+  backImageAlt: "Back of the black F4F Performance Training Tee with the Good. Better. Best. Never Settle. F4F design.",
+  availableSizes: [],
+  price: "",
+  storeUrl: "",
+  provider: "",
+  garmentModel: "",
+  sizeChart: [],
+  careInstructions: ["Wash cold", "Wash inside out", "Avoid ironing directly over the design"]
+};

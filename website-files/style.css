@@ -13,3 +13,27 @@
 .instagram-nav,.instagram-footer{color:var(--blue2)!important}.instagram-footer{text-decoration:none;font-weight:700}.secondary-service{border:1px solid rgba(117,212,247,.22);background:linear-gradient(120deg,rgba(21,169,230,.07),rgba(16,36,58,.55))}.package-card{display:flex;flex-direction:column}.package-card .card-link{margin-top:auto;color:var(--blue2)}
 .coaches-photo-section{background:linear-gradient(180deg,#0d2a47,var(--ink))}.coaches-photo{width:min(100%,760px);margin:0 auto}.coaches-photo img{width:100%;height:auto;aspect-ratio:1086/1448;object-fit:cover;object-position:center;border-radius:.85rem;border:1px solid var(--line);box-shadow:var(--shadow)}.coaches-photo figcaption{padding-top:.85rem;color:var(--muted);text-align:center;font-size:.92rem}
 .business-email-footer,.business-email-form a,.business-email-contact a{color:var(--blue2);font-weight:700}.business-email-form{margin:1rem 0 0;color:var(--muted)}
+
+/* F4F Apparel prelaunch */
+.apparel-hero{position:relative;overflow:hidden;padding:96px 0 82px;background:radial-gradient(circle at 78% 35%,rgba(21,169,230,.18),transparent 30%),linear-gradient(135deg,#050a10,#0b2136)}
+.apparel-hero:after{content:"F4F";position:absolute;right:-.03em;bottom:-.28em;color:rgba(255,255,255,.025);font:800 min(42vw,34rem)/1 'Barlow Condensed',sans-serif;pointer-events:none}
+.apparel-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.apparel-hero h1{font:800 clamp(3.5rem,8vw,6.5rem)/.88 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:-.025em;margin:.35rem 0 1.4rem;max-width:780px}
+.apparel-status{display:inline-flex;align-items:center;gap:.65rem;margin-top:1rem;padding:.6rem .9rem;border:1px solid rgba(117,212,247,.32);background:rgba(21,169,230,.08);border-radius:.35rem;font-weight:700}
+.apparel-status>span:first-child{width:.55rem;height:.55rem;border-radius:50%;background:var(--blue2);box-shadow:0 0 0 5px rgba(117,212,247,.1)}
+.apparel-manifesto{border-left:5px solid var(--blue);padding:1.4rem 0 1.4rem 2rem}
+.apparel-manifesto p{margin:0;font:800 clamp(3rem,6vw,5.5rem)/.82 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.apparel-manifesto .apparel-blue{color:var(--blue)}
+.apparel-manifesto .apparel-never{margin-top:1.5rem;font-size:clamp(1.65rem,3vw,2.6rem);letter-spacing:.08em}
+.product-previews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:42px}
+.product-preview{margin:0;padding:0;background:var(--panel);border:1px solid var(--line);border-radius:.75rem;overflow:hidden}
+.product-preview figcaption{padding:.8rem 1.1rem;background:#050d17;border-bottom:1px solid var(--line);color:var(--blue2);font:700 .82rem/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.product-preview>p{margin:0;padding:1rem 1.25rem 1.25rem;color:var(--muted)}
+.shirt-placeholder{aspect-ratio:4/5;display:grid;place-items:center;padding:8%;background:radial-gradient(circle at 50% 38%,#263241,#10151c 58%,#070a0d)}
+.shirt-placeholder>img{width:100%;height:auto;max-height:100%;object-fit:contain}
+.artwork-notice{margin-top:24px}
+.apparel-details dl{margin:0}.apparel-details dl>div{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}.apparel-details dl>div:last-child{border-bottom:0}.apparel-details dt{color:var(--muted)}.apparel-details dd{margin:0;font-weight:700}
+.launch-card{padding:2rem;border:1px solid rgba(117,212,247,.3);background:linear-gradient(140deg,#10243a,#08131f);border-radius:.75rem;box-shadow:var(--shadow)}
+.launch-card .btn[disabled]{opacity:.62;cursor:not-allowed;transform:none;box-shadow:none}.text-link{color:var(--blue2);font-weight:700}
+@media(max-width:1120px){.apparel-hero-grid{grid-template-columns:1fr;gap:38px}.apparel-manifesto{max-width:620px}}
+@media(max-width:620px){.apparel-hero{padding:70px 0 60px}.product-previews{grid-template-columns:1fr}.apparel-manifesto{padding-left:1.25rem}.shirt-placeholder{aspect-ratio:1/1.2}.apparel-details dl>div{grid-template-columns:1fr;gap:.15rem}}

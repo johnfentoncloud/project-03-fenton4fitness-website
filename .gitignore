@@ -31,5 +31,7 @@ __pycache__/
 40-cloudwatch-successful-invocation.png
 screenshots/dynamodb/34-aws-lead-pipeline-pushed-clean-status.png
 assets/images/coaches/*.jpg
+source-assets/apparel/*
+!source-assets/apparel/README.md
 AUDIT.md
 FORM-INTEGRATION.md

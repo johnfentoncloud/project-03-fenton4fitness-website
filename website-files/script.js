@@ -18,9 +18,13 @@ if (navToggle && navLinks) {
 }
 
 const instagramUrl = "https://www.instagram.com/fenton4fitness/";
-if (navLinks && !navLinks.querySelector(".instagram-nav")) {
+if (navLinks && !navLinks.querySelector('a[href="merch.html"]')) {
   const item = document.createElement("li");
-  item.innerHTML = `<a class="instagram-nav" href="${instagramUrl}" target="_blank" rel="noopener noreferrer" aria-label="Follow Fenton4Fitness on Instagram (opens in a new tab)">Instagram</a>`;
+  const link = document.createElement("a");
+  link.href = "merch.html";
+  link.textContent = "F4F Apparel";
+  if (location.pathname.endsWith("/merch.html")) link.setAttribute("aria-current", "page");
+  item.appendChild(link);
   navLinks.insertBefore(item, navLinks.lastElementChild);
 }
 
@@ -40,6 +44,11 @@ document.querySelectorAll(".site-footer .container").forEach((footer) => {
     const businessLink = document.createElement("p");
     businessLink.innerHTML = '<a class="business-websites-footer" href="business-websites.html">Websites for Small Businesses</a>';
     footer.insertBefore(businessLink, fineprint);
+  }
+  if (!footer.querySelector(".apparel-footer")) {
+    const apparelLink = document.createElement("p");
+    apparelLink.innerHTML = '<a class="apparel-footer" href="merch.html">F4F Apparel</a>';
+    footer.insertBefore(apparelLink, fineprint);
   }
 });
 
