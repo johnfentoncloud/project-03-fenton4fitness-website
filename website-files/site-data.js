@@ -19,21 +19,21 @@ window.F4F_WEBSITE_PACKAGES = [
   { title:"Website Care", price:"Starting at $75 per month", description:"Optional, scoped support for an existing website. This is not an unlimited-work plan.", features:["Basic content updates","Small text or image changes","General maintenance","Form checks","Minor troubleshooting","Basic performance monitoring"] }
 ];
 
-/* F4F Apparel prelaunch content. Leave unverified commerce fields blank until the provider listing is approved. */
+/* F4F Apparel product content. Replace the placeholder MerchShare URL only after Printful provides the approved live link. */
 window.F4F_APPAREL = {
   productName: "F4F Performance Training Tee",
   color: "Black",
-  productStatus: "First sample in production",
-  description: "Built for coaching. Built for lifting. Built for everyday training.",
+  productStatus: "First owner sample",
+  description: "A lightweight, moisture-wicking performance shirt built for coaching, lifting, conditioning, and repeat training.",
   frontImage: "images/apparel/f4f-performance-tee-front.webp",
   frontImageAlt: "Front of the black F4F Performance Training Tee with a small circular Fenton4Fitness logo on the left chest.",
   backImage: "images/apparel/f4f-performance-tee-back.webp",
-  backImageAlt: "Back of the black F4F Performance Training Tee with the Good. Better. Best. Never Settle. F4F design.",
-  availableSizes: [],
+  backImageAlt: "Back of the black F4F Performance Training Tee with the Good. Better. Best. Never Settle. design and official kettlebell F4F signature.",
+  availableSizes: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
   price: "",
-  storeUrl: "",
-  provider: "",
-  garmentModel: "",
+  storeUrl: "PRINTFUL_MERCHSHARE_URL_PLACEHOLDER",
+  provider: "Printful",
+  garmentModel: "A4 N3142 Cooling Performance Crew",
   sizeChart: [],
   careInstructions: ["Wash cold", "Wash inside out", "Avoid ironing directly over the design"]
 };

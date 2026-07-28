@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /submit-testimonial.html
-Sitemap: https://www.fenton4fitness.com/sitemap.xml
+Sitemap: https://fenton4fitness.com/sitemap.xml

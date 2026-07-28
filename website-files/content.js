@@ -11,6 +11,21 @@ if(apparel){
   document.querySelectorAll("[data-apparel-status]").forEach(element=>{element.textContent=apparel.productStatus;});
   document.querySelectorAll("[data-apparel-description]").forEach(element=>{element.textContent=apparel.description;});
   document.querySelectorAll("[data-apparel-price]").forEach(element=>{element.textContent=apparel.price||"Coming soon";});
+  document.querySelectorAll("[data-apparel-provider]").forEach(element=>{element.textContent=apparel.provider;});
+  document.querySelectorAll("[data-apparel-garment]").forEach(element=>{element.textContent=apparel.garmentModel;});
+  document.querySelectorAll("[data-apparel-order]").forEach(link=>{
+    const isPlaceholder=!/^https:\/\//.test(apparel.storeUrl);
+    link.href=isPlaceholder?"#printful-link-pending":apparel.storeUrl;
+    link.setAttribute("aria-disabled",String(isPlaceholder));
+    link.classList.toggle("is-placeholder",isPlaceholder);
+    if(isPlaceholder){
+      link.addEventListener("click",event=>event.preventDefault());
+      link.title="Printful MerchShare link pending";
+    }else{
+      link.target="_blank";
+      link.rel="noopener noreferrer";
+    }
+  });
   const setPreview=(selector,src,alt)=>{
     const root=document.querySelector(selector);
     if(!root||!src)return;
