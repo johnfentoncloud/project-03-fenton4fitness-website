@@ -31,6 +31,8 @@
 .product-preview>p{margin:0;padding:1rem 1.25rem 1.25rem;color:var(--muted)}
 .shirt-placeholder{aspect-ratio:4/5;display:grid;place-items:center;padding:8%;background:radial-gradient(circle at 50% 38%,#263241,#10151c 58%,#070a0d)}
 .shirt-placeholder>img{width:100%;height:auto;max-height:100%;object-fit:contain}
+.shirt-placeholder.model-photo-frame{aspect-ratio:auto;padding:0}
+.shirt-placeholder.model-photo-frame>img{width:100%;height:auto;max-height:none;object-fit:contain}
 .artwork-notice{margin-top:24px}
 .apparel-details dl{margin:0}.apparel-details dl>div{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}.apparel-details dl>div:last-child{border-bottom:0}.apparel-details dt{color:var(--muted)}.apparel-details dd{margin:0;font-weight:700}
 .launch-card{padding:2rem;border:1px solid rgba(117,212,247,.3);background:linear-gradient(140deg,#10243a,#08131f);border-radius:.75rem;box-shadow:var(--shadow)}
