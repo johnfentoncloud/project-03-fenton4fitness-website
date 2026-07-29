@@ -31,7 +31,7 @@ window.F4F_APPAREL = {
   backImageAlt: "Back of the black F4F Performance Training Tee with the Good. Better. Best. Never Settle. design and official kettlebell F4F signature.",
   availableSizes: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
   price: "",
-  storeUrl: "PRINTFUL_MERCHSHARE_URL_PLACEHOLDER",
+  storeUrl: "https://www.printful.com/product-template/105555854/cecd022fb5496d24526ac5eec4c7a882",
   provider: "Printful",
   garmentModel: "A4 N3142 Cooling Performance Crew",
   sizeChart: [],
