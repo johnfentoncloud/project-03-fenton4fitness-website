@@ -1,6 +1,51 @@
 const API_URL = window.F4F_CONFIG?.apiUrl || "";
 const BUSINESS_EMAIL = "Fenton4Fitness@gmail.com";
 const CONTACT_CONFIRMATION = "Thanks for contacting Fenton4Fitness. John or Jess will review your information and follow up as soon as possible.";
+const ATTRIBUTION_KEY = "f4f:first-touch-attribution:v1";
+const ATTRIBUTION_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+const MARKETING_SOURCES = new Set([
+  "old_line_lobby", "old_line_team_flyer", "rise_lobby", "rise_small_group_flyer",
+  "coffee_shop", "lacrosse_event", "instagram", "facebook"
+]);
+
+function validCampaign(value) {
+  return /^[a-z0-9][a-z0-9_-]{0,63}$/.test(String(value || ""));
+}
+
+function readAttribution(now = Date.now(), storage = window.localStorage) {
+  try {
+    const value = JSON.parse(storage.getItem(ATTRIBUTION_KEY) || "null");
+    const firstSeen = Date.parse(value?.firstSeenAt || "");
+    if (!value || !MARKETING_SOURCES.has(value.source) || !Number.isFinite(firstSeen) || now - firstSeen > ATTRIBUTION_TTL_MS || firstSeen > now + 300000) {
+      storage.removeItem(ATTRIBUTION_KEY);
+      return null;
+    }
+    return value;
+  } catch {
+    storage.removeItem(ATTRIBUTION_KEY);
+    return null;
+  }
+}
+
+function captureAttribution(search = location.search, pathname = location.pathname, now = Date.now(), storage = window.localStorage) {
+  const existing = readAttribution(now, storage);
+  if (existing) return existing;
+  const params = new URLSearchParams(search);
+  const source = params.get("source") || "";
+  if (!MARKETING_SOURCES.has(source)) return null;
+  const campaign = params.get("campaign") || "";
+  const attribution = {
+    source,
+    landingPage: ["/athlete-development", "/athlete-development.html", "/youth-athletes.html", "/athletic-development.html"].includes(pathname) ? "/athlete-development" : pathname,
+    firstSeenAt: new Date(now).toISOString()
+  };
+  if (validCampaign(campaign)) attribution.campaign = campaign;
+  storage.setItem(ATTRIBUTION_KEY, JSON.stringify(attribution));
+  return attribution;
+}
+
+window.F4F_ATTRIBUTION = Object.freeze({ captureAttribution, readAttribution, validCampaign, sources: MARKETING_SOURCES });
+captureAttribution();
 
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -23,6 +68,7 @@ const primaryAdditions = [
   { href: "business-websites.html", label: "Website Services" }
 ];
 if (navLinks) {
+  navLinks.querySelectorAll('a[href="youth-athletes.html"]').forEach(link => { link.href = "/athlete-development"; });
   primaryAdditions.forEach(({ href, label }) => {
     if (navLinks.querySelector(`a[href="${href}"]`)) return;
     const item = document.createElement("li");
@@ -91,6 +137,15 @@ if (clientType) {
   const requestedType = new URLSearchParams(location.search).get("type");
   const typeMap = { youth: "parent-guardian", adults: "adult", adult: "adult", teams: "team", team: "team" };
   if (typeMap[requestedType]) clientType.value = typeMap[requestedType];
+  const requestedProgram = new URLSearchParams(location.search).get("program");
+  const programSelect = document.querySelector("#preferred-training");
+  if (programSelect) {
+    const smallGroup = programSelect.querySelector('option[value="small-group"]');
+    const teamTraining = programSelect.querySelector('option[value="team"]');
+    if (smallGroup) { smallGroup.value = "small_group_athlete_development"; smallGroup.textContent = "Small Group Athlete Development"; }
+    if (teamTraining) { teamTraining.value = "team_training"; teamTraining.textContent = "Team Training"; }
+  }
+  if (programSelect && Array.from(programSelect.options).some(option => option.value === requestedProgram)) programSelect.value = requestedProgram;
   clientType.addEventListener("change", updateConditionalFields);
   updateConditionalFields();
 }
@@ -133,6 +188,8 @@ function buildPayload(form) {
     payload.injuryHistory = data.injuryHistory || "Not provided";
     payload.trainingHistory = data.experienceLevel || "";
     payload.otherInterests = data.additionalDetails || "";
+    const attribution = readAttribution();
+    if (attribution) Object.assign(payload, attribution);
   } else if (form.id === "website-service-form") {
     payload.submissionType = "website-service-inquiry";
     payload.leadType = "business-website";
@@ -231,11 +288,16 @@ async function submitForm(form) {
       response: responseBody
     });
 
+    const attribution = form.id === "lead-form" ? readAttribution() : null;
     const successMessage = form.id === "website-service-form"
       ? `${CONTACT_CONFIRMATION} For website-service inquiries, John will also review the requested project scope and features.`
       : form.id === "testimonial-form"
         ? `${CONTACT_CONFIRMATION} Your testimonial was submitted for private review and will never be published without permission.`
-        : CONTACT_CONFIRMATION;
+        : attribution?.source.startsWith("old_line_")
+          ? "We received your Team Training inquiry and will be in touch shortly."
+          : attribution?.source.startsWith("rise_")
+            ? "We received your Small Group Athlete Development inquiry and will be in touch shortly."
+            : CONTACT_CONFIRMATION;
     form.reset();
     updateConditionalFields();
     showStatus(status, "success", successMessage);
